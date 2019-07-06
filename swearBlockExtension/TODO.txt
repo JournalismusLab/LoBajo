@@ -1,6 +1,9 @@
-[ ] tokenize the text into words
-   [ ] build a hashmap for the hate speech words and just look up 
+[x] tokenize the text into words
+   [x] build a hashmap for the hate speech words and just look up 
        if the word in question is in there
 [x] find swear words in a list
-   [ ] find out how to load these words
+   [x] find out how to load these words (David made a cpp tool for that)
+   
 [ ] find an api and do sentiment analysis
+
+[ ] find a site with hate speech on it to demonstrate the extension
