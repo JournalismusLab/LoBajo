@@ -69,7 +69,11 @@ function fill_swear_words(){
 	var swear_words_arr = swear.concat(swear_en);
 	
 	swear_words_arr.forEach(function(str){
-		swear_words[str.toLowerCase()]=true;
+		var lower = str.toLowerCase(); 
+		swear_words[lower]=true;
+		swear_words[lower+"s"]=true;
+		swear_words[lower+"e"]=true;
+		swear_words[lower+"en"]=true;
 	});
 	
 	var time_2_ms = (new Date()).getTime();
@@ -86,6 +90,14 @@ function makeNoHateSpeechWord(word){
 	
 }
 
+function strip_word_of_special_chars(word){
+	return word
+		.replace("!","")
+		.replace("?","")
+		.replace(",","")
+		.replace(".","");
+}
+
 function makeNoHateSpeech(text){
 
 	//console.log("inspect "+text);
@@ -95,7 +107,7 @@ function makeNoHateSpeech(text){
 	
 	result=result.map(function(word){
 		//console.log("consider "+word);
-		if(swear_words.hasOwnProperty(word.toLowerCase())){
+		if(swear_words.hasOwnProperty(strip_word_of_special_chars(word.toLowerCase()))){
 			//it is swear word
 			//console.log("replaced "+word);
 			return replacements[Math.floor(Math.random()*replacements.length)];		
