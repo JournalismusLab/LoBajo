@@ -1,6 +1,6 @@
-document.body.style.border = "5px solid red";
+//document.body.style.border = "5px solid red";
 
-console.log('hello');
+console.log('swearblock is running');
 
 
 //https://www.javascriptcookbook.com/article/traversing-dom-subtrees-with-a-recursive-walk-the-dom-function/
