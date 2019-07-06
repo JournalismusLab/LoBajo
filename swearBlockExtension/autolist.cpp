@@ -66,7 +66,7 @@ int main(void) {
    }
 
    ofstream outFile;
-   outFile.open("/home/milo/Schreibtisch/out");
+   outFile.open(outPath);  // todo; file_exist check
    outFile << "var swear = [ ";
 
    int row = 0;
