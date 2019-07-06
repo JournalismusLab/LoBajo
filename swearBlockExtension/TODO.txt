@@ -1,3 +1,4 @@
 [ ] tokenize the text into words
- - [ ] build a hashmap for the hate speech words and just look up 
+   [ ] build a hashmap for the hate speech words and just look up 
        if the word in question is in there
+[ ] find an api and do sentiment analysis
