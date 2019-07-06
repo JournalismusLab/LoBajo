@@ -68,6 +68,8 @@ public class ARActivity extends AppCompatActivity {
             lamp.getScaleController().setMinScale(0.40f);
             lamp.getScaleController().setMaxScale(0.48f);
         });
+
+        //arFragment.getArSceneView().getSession().getAllAnchors()
     }
 
     public static boolean checkIsSupportedDeviceOrFinish(final Activity activity) {
