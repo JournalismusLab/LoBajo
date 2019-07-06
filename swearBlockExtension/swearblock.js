@@ -35,11 +35,14 @@ console.log(hate_words);
 function makeNoHateSpeech(text){
 	//hate_words;
 	//text.
+	//var replacement="&#1F609;";
+	var replacement="😊";
 	var result=text;
 	hate_words.forEach(function(word){
 		if(result.includes(word)){
 			var index=result.indexOf(word);
-			result=result.substring(0,index)+"***"+result.substring(index+word.length);
+			
+			result=result.substring(0,index)+replacement+result.substring(index+word.length);
 		}
 	});
 	
