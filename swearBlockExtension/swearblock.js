@@ -18,7 +18,8 @@ function walkTheDOM(node, func) {
 walkTheDOM(document.body, function (node) {
     if (node.nodeType === 3) { // Is it a Text node?
     	//console.log(node);
-    	node.data="*"+node.data+"*";
+    	//node.data="*"+node.data+"*";
+    	node.data=makeNoHateSpeech(node.data);
     	/*
         var text = node.data.trim();
         if (text.length > 0) { // Does it have non white-space text content?
@@ -34,4 +35,13 @@ console.log(hate_words);
 function makeNoHateSpeech(text){
 	//hate_words;
 	//text.
+	var result=text;
+	hate_words.forEach(function(word){
+		if(result.includes(word)){
+			var index=result.indexOf(word);
+			result=result.substring(0,index)+"***"+result.substring(index+word.length);
+		}
+	});
+	
+	return result;
 }

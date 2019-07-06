@@ -22,6 +22,9 @@
         <activity android:name=".Activities.InfotainmentFormActivity"></activity>
 
         <activity android:name=".Activities.ARActivity">
+
+        </activity>
+        <activity android:name=".Activities.FeedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
