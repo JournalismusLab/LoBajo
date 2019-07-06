@@ -1,0 +1,21 @@
+// Planned Features for LoBajo
+
+
+*** Basic Features ***
+
+--> News Marker on GMap
+--> Search by Request
+--> Categorizing News and filter by Category
+--> News Feed
+--> User login / Social login
+--> Rating system
+--> Comment Section for News
+
+*** AR Features ***
+
+--> AR View on News
+
+*** AI Features ***
+
+--> Filter Hate Speech in Comment Section
+
