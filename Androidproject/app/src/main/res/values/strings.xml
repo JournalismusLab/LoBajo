@@ -2,4 +2,8 @@
     <string name="app_name">LoBajo</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_news_feed">NewsFeedActivity</string>
+    <string name="title_activity_main_bottom_navigation">MainBottomNavigation</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
