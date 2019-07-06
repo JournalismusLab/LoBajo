@@ -293,6 +293,8 @@ public class ARActivity extends AppCompatActivity {
         Node node = new Node();
         node.setParent(anchorNode);
         node.setRenderable(redSphereRenderable);
+
+        
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
