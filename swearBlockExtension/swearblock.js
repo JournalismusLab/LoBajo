@@ -19,7 +19,7 @@ walkTheDOM(document.body, function (node) {
     if (node.nodeType === 3) { // Is it a Text node?
     	//console.log(node);
     	//node.data="*"+node.data+"*";
-    	node.data=makeNoHateSpeech(node.data);
+    	node.data=node.data.split(" ")makeNoHateSpeech(node.data);
     	/*
         var text = node.data.trim();
         if (text.length > 0) { // Does it have non white-space text content?
