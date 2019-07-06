@@ -179,4 +179,4 @@ var swear = [ 'Ölgötze', 'Äffer', 'Äffchen', 'Zystenfresse', 'Zyste', 'Zynik
 'Abortdeckel', 'Abgötter', 'Abgasproduzent', 'Abgaskakerlake', 'Abflussrohrsauger', 'Abflussrohrgucker', 'Abficker', 'Abfalltonnenvollscheißer', 'Abfallprodukt', 'Abfall, biochemischer', 
 'Abfall', 'Abenteurer', 'Abendvogel', 'Abderit', 'Abdeckstiftbenutzer', 'Abdecker', 'Abc-Schütze', 'Abc-Schüler', 'Abart', 'Aasknochen', 
 'Aasgeier', 'Aasfresser', 'Aas', 'Aalwurstverkäufer', 'Aalfresse', 'Aalficker', 'Aalauge', 'Aal', 'Aa-Wurst', 'Aa-Loch', 
-'Aa-Kopf', 'Aa-Gesicht', 'Aa-Esser', 'ABS-Bremser',  ];
+'Aa-Kopf', 'Aa-Gesicht', 'Aa-Esser', 'ABS-Bremser' ];
