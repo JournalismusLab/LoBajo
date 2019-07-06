@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".NewsFeedActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_news_feed"
             android:theme="@style/AppTheme.NoActionBar">
 
