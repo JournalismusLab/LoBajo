@@ -13,7 +13,10 @@
 
 *** AR Features ***
 - [x] deadline until Saturday 18:00 to get AR working 
-- [ ] get hardcoded, geotagged markers into the AR planes 
+- [x] ability to show text in locations relative to the user in the scene
+- [ ] (difficult) get hardcoded, geotagged markers into the AR planes 
+- [ ] ability for the user to tap in the vr space and add a news article there
+	- [ ] ability to tap and get to another activity
 
 --> AR View on News
 
