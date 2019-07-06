@@ -12,8 +12,11 @@
 --> Comment Section for News
 
 *** AR Features ***
+- [x] deadline until Saturday 18:00 to get AR working 
+- [ ] get hardcoded, geotagged markers into the AR planes 
 
 --> AR View on News
+
 
 *** AI Features ***
 
