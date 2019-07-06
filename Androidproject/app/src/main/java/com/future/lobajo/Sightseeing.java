@@ -23,6 +23,11 @@ public class Sightseeing {
         this.description = description;
     }
 
+    public String toString()
+    {
+        return type.name() + ";" + name + ";" + link + ";" + description;
+    }
+
     public static void main(String args[]) {
 
         System.out.println("Hello Sightseeing");
