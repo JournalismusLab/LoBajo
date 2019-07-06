@@ -1,5 +1,8 @@
 package com.future.lobajo;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class SightseeingDB implements ISightseeingDB {
 
     public static void main(String args[]) {
@@ -7,8 +10,10 @@ public class SightseeingDB implements ISightseeingDB {
         System.out.println("Hello Java");
     }
 
-    public String getSightseeing( double longitute, double lattitude, double direction, double radius )
+    public ArrayList<Sightseeing> getSightseeing( double longitute, double lattitude, double direction, double radius )
     {
-        return "Hello, World";
+        ArrayList<Sightseeing> res = new ArrayList<Sightseeing>();
+
+        return res;
     }
 }
