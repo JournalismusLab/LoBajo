@@ -1,6 +1,6 @@
 package com.future.lobajo;
 
-public class SightseeingDB {
+public class SightseeingDB implements ISightseeingDB {
 
     public static void main(String args[]) {
 
