@@ -6,8 +6,10 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,13 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".Activities.InfotainmentFormActivity"></activity>
+
         <activity android:name=".Activities.ARActivity">
 
         </activity>
-
-        <activity android:name=".Activities.NewsFeedActivity">
-
-        </activity>
+        <activity android:name=".Activities.NewsFeedActivity"></activity>
         <activity
             android:name=".MainBottomNavigation"
             android:label="@string/title_activity_main_bottom_navigation">
@@ -32,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -43,13 +45,14 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <!-- Indicates that app supports, but does not require ARCore ("AR Optional").
+        <!--
+ Indicates that app supports, but does not require ARCore ("AR Optional").
          Unlike "AR Required" apps, Google Play Store will not automatically
          download and install ARCore when the app is installed.
-    -->
-        <meta-data android:name="com.google.ar.core" android:value="required" />
-
+        -->
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
 
         <activity
             android:name=".Activities.MapsActivity"
