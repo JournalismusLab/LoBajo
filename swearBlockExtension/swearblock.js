@@ -2,7 +2,7 @@
 console.log('swearblock is running');
 
 var swear_words_en={};
-var replacement="😊";
+var replacements=["😊"];
 
 main();
 
@@ -86,7 +86,7 @@ function makeNoHateSpeech(text){
 		if(swear_words_en.hasOwnProperty(word.toLowerCase())){
 			//it is swear word
 			//console.log("replaced "+word);
-			return replacement;		
+			return replacements[Math.floor(Math.random()*replacements.length)];		
 		}
 		return word;	
 	});
