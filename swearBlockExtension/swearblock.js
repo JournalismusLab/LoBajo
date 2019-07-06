@@ -1,7 +1,7 @@
 //document.body.style.border = "5px solid red";
 console.log('swearblock is running');
 
-var swear_words_en={};
+var swear_words={};
 var replacements=["😊","😀","😍","🤠"];
 
 main();
@@ -54,19 +54,22 @@ async function workOnNode(node){
 
 function fill_swear_words(){
 	console.log("filling swear words");
-
-	var swear_words_en_arr = swear;
 	
-	swear_words_en_arr.forEach(function(str){
-		swear_words_en[str.toLowerCase()]=true;
+	var time_1_ms = (new Date()).getTime();
+
+	var swear_words_arr = swear.concat(swear_en);
+	
+	swear_words_arr.forEach(function(str){
+		swear_words[str.toLowerCase()]=true;
 	});
+	
+	var time_2_ms = (new Date()).getTime();
+	var duration = time_2_ms - time_1_ms;
+	
+	console.log("build swear words object "+duration+" milliseconds");
 
 	//DEBUG	
-	swear_words_en["JavaScript".toLowerCase()]=true;
-
-	//console.log(swear_words_en);
-	//console.log(swear_words_en_arr);
-	//console.log(swear_words_en);
+	swear_words["JavaScript".toLowerCase()]=true;
 
 }
 
@@ -83,7 +86,7 @@ function makeNoHateSpeech(text){
 	
 	result=result.map(function(word){
 		//console.log("consider "+word);
-		if(swear_words_en.hasOwnProperty(word.toLowerCase())){
+		if(swear_words.hasOwnProperty(word.toLowerCase())){
 			//it is swear word
 			//console.log("replaced "+word);
 			return replacements[Math.floor(Math.random()*replacements.length)];		

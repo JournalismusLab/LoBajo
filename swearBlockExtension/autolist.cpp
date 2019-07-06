@@ -47,8 +47,10 @@ int main(void) {
    cout << "Specify absolute Path to a List Document: ";
    cin >> inPath;
 
-   if(file_exists(inPath) == false)
+   if(file_exists(inPath) == false){
+      cout << "could not find inPath " << inPath;
       return EXIT_FAILURE;
+   }
 
    cout << "\nSpecifiy absolute Path to a saving location: ";
    cin >> outPath;
@@ -57,7 +59,7 @@ int main(void) {
 
    /****** Dialog ******/
 
-   inFile.open("/home/milo/Schreibtisch/list");
+   inFile.open(inPath);
 
    while(getline(inFile, input)) {
 
@@ -84,6 +86,8 @@ int main(void) {
 
    outFile << " ];";
    outFile.close();
+   
+   cout << "success";
 
    return EXIT_SUCCESS;
 }
