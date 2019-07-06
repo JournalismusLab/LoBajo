@@ -12,16 +12,31 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.future.lobajo.R;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
+import com.google.ar.core.Pose;
+import com.google.ar.core.Session;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.ArSceneView;
+import com.google.ar.sceneform.Node;
+import com.google.ar.sceneform.Scene;
+import com.google.ar.sceneform.SceneView;
+import com.google.ar.sceneform.math.Vector3;
+import com.google.ar.sceneform.rendering.Color;
+import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.rendering.Renderable;
+import com.google.ar.sceneform.rendering.ShapeFactory;
+import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+
+import java.util.concurrent.ExecutionException;
 
 public class ARActivity extends AppCompatActivity {
 
@@ -30,6 +45,10 @@ public class ARActivity extends AppCompatActivity {
 
     ArFragment arFragment;
     ModelRenderable diceRenderable;
+
+    private static Renderable redSphereRenderable;
+
+    boolean populated = false;
 
 
     @TargetApi(Build.VERSION_CODES.N) //different from tutorial
@@ -54,7 +73,7 @@ public class ARActivity extends AppCompatActivity {
                 });
 
         arFragment.setOnTapArPlaneListener((HitResult hitresult, Plane plane, MotionEvent motionevent) -> {
-            if (diceRenderable== null) {
+            if (diceRenderable == null) {
                 return;
             }
             Anchor anchor = hitresult.createAnchor();
@@ -67,8 +86,83 @@ public class ARActivity extends AppCompatActivity {
 
             lamp.getScaleController().setMinScale(0.40f);
             lamp.getScaleController().setMaxScale(0.48f);
-        });
 
+            if(!populated){
+                populateAR2();
+                populated=true;
+            }
+
+        });
+        MaterialFactory.makeOpaqueWithColor(this, new Color(android.graphics.Color.RED))
+                .thenAccept(
+                        material -> {
+                            redSphereRenderable =
+                                    ShapeFactory.makeSphere(0.1f, new Vector3(0.0f, 0.15f, 0.0f), material);
+                        });
+        //populateAR2();
+    }
+
+    public void populateAR2(){
+        SceneView sceneView = arFragment.getArSceneView();
+
+        // Find a position half a meter in front of the user.
+        Vector3 cameraPos = sceneView.getScene().getCamera().getWorldPosition();
+        Vector3 cameraForward = sceneView.getScene().getCamera().getForward();
+        Vector3 position = Vector3.add(cameraPos, cameraForward.scaled(0.5f));
+
+        // Create an ARCore Anchor at the position.
+        Pose pose = Pose.makeTranslation(position.x, position.y, position.z);
+        Anchor anchor = ((ArSceneView) sceneView).getSession().createAnchor(pose);
+
+        // Create the Sceneform AnchorNode
+        AnchorNode anchorNode = new AnchorNode(anchor);
+        anchorNode.setParent(sceneView.getScene());
+
+        // Create the node relative to the AnchorNode
+        Node node = new Node();
+        node.setParent(anchorNode);
+        node.setRenderable(redSphereRenderable);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void populateAR(){
+
+
+        //node.setParent(arFragment.getArSceneView().getScene());
+
+
+
+        //node.setRenderable(redSphereRenderable);
+
+        //Add an Anchor and a renderable in front of the camera
+        Session session = arFragment.getArSceneView().getSession();
+        float[] pos = { 0,0,-1 };
+        float[] rotation = {0,0,0,1};
+        Anchor anchor =  session.createAnchor(new Pose(pos, rotation));
+        AnchorNode anchorNode = new AnchorNode(anchor);
+        anchorNode.setRenderable(redSphereRenderable);
+        anchorNode.setParent(arFragment.getArSceneView().getScene());
+
+        //EXPERIMENTAL
+
+
+        /*
+        try {
+            Renderable test_text = ViewRenderable.builder()
+                    .setView(this, R.layout.test_view)
+                    .build().get();
+
+            //Node node = new Node();
+            //node.setParent(arFragment.getArSceneView().getScene());
+            //node.setRenderable(test_text);
+
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        */
         //arFragment.getArSceneView().getSession().getAllAnchors()
     }
 
