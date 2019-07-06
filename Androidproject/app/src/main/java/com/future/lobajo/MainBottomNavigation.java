@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.future.lobajo.Activities.MapsActivity;
+import com.future.lobajo.Activities.NewsFeedActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,8 @@ public class MainBottomNavigation extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-
+                    Intent intent2 = new Intent(MainBottomNavigation.this, NewsFeedActivity.class);
+                    startActivity(intent2);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent intent = new Intent(MainBottomNavigation.this, MapsActivity.class);

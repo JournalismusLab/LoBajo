@@ -12,8 +12,10 @@
 --> Comment Section for News
 
 *** AR Features ***
+- deadline until Saturday 18:00 to get AR working 
 
 --> AR View on News
+
 
 *** AI Features ***
 
