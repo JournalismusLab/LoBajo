@@ -34,6 +34,11 @@ function workOnEachNode(node){
 
 function main(){
 	console.log("main");
+	
+	var meta = document.createElement('meta');
+	//meta.charset = "UTF-8";
+	meta.setAttribute('charset', 'UTF-8');
+	document.getElementsByTagName('head')[0].appendChild(meta);
 
 	fill_swear_words();
 
