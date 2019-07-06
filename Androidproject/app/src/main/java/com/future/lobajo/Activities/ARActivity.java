@@ -64,6 +64,9 @@ public class ARActivity extends AppCompatActivity {
             lamp.setParent(anchorNode);
             lamp.setRenderable(diceRenderable);
             lamp.select();
+
+            lamp.getScaleController().setMinScale(0.40f);
+            lamp.getScaleController().setMaxScale(0.48f);
         });
     }
 
