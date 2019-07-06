@@ -15,6 +15,14 @@ public class Sightseeing {
     public String link;
     public String description;
 
+    public Sightseeing( Type type, String name, String link, String description )
+    {
+        this.type = type;
+        this.name = name;
+        this.link = link;
+        this.description = description;
+    }
+
     public static void main(String args[]) {
 
         System.out.println("Hello Sightseeing");
