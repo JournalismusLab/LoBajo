@@ -28,7 +28,10 @@ walkTheDOM(document.body, function (node) {
     }
 });
 
-function makeNoHateSpeech(text){
 
+console.log(hate_words);
+
+function makeNoHateSpeech(text){
+	//hate_words;
 	//text.
 }
