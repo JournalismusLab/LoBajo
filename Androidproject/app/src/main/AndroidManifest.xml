@@ -24,17 +24,15 @@
         <activity android:name=".Activities.ARActivity">
 
         </activity>
-        <activity android:name=".Activities.FeedActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Activities.NewsFeedActivity"></activity>
         <activity
             android:name=".MainBottomNavigation"
-            android:label="@string/title_activity_main_bottom_navigation" />
+            android:label="@string/title_activity_main_bottom_navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

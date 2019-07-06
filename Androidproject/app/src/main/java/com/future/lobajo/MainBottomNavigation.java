@@ -3,6 +3,7 @@ package com.future.lobajo;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.future.lobajo.Activities.ARActivity;
 import com.future.lobajo.Activities.MapsActivity;
 import com.future.lobajo.Activities.NewsFeedActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,7 +32,8 @@ public class MainBottomNavigation extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    Intent intent3 = new Intent(MainBottomNavigation.this, ARActivity.class);
+                    startActivity(intent3);
                     return true;
             }
             return false;
@@ -44,7 +46,6 @@ public class MainBottomNavigation extends AppCompatActivity {
         setContentView(R.layout.activity_main_bottom_navigation);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
