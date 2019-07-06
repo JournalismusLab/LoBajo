@@ -2,7 +2,7 @@
 console.log('swearblock is running');
 
 var swear_words_en={};
-var replacements=["😊"];
+var replacements=["😊","😀","😍","🤠"];
 
 main();
 
