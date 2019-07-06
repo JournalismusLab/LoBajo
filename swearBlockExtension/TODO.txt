@@ -8,4 +8,4 @@
 
 [ ] find a site with hate speech on it to demonstrate the extension
 
-[ ] replace hate speech with random friendly emojis to make it more interesting
+[x] replace hate speech with random friendly emojis to make it more interesting
