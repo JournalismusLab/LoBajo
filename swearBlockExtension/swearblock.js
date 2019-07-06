@@ -6,7 +6,7 @@ var swear_words={};
 //andrey said that sometimes older emojis are black and white in some fonts
 //but the newer emojis have a higher chance of being colorful.
 //so we use newer emojis, so that all emojis that we use  are displayed colorful
-var replacements=["🙋🏼‍♂️","🐶","🦜","🌚","🤦‍♀️"];
+var replacements=["🙋🏼‍♂️","🐶","🦜","🌚","🤦‍♀️","🎼","🌅","🎅🏽"];
 
 main();
 
