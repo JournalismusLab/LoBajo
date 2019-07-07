@@ -46,6 +46,11 @@ function main(){
 async function workOnNode(node){
 	if(node.data.trim().length>0){
 		node.data=makeNoHateSpeech(node.data);
+		var sentiment = new Sentimood();
+		if(sentiment.analyze(node.data).score < -2){
+			node.data = sentimentReplace(node.data);
+		}
+		console.log(sentiment.analyze("out").score);
 	}
 }
 
@@ -77,10 +82,27 @@ function makeNoHateSpeechWord(word){
 	
 }
 
+function sentimentReplace(text){
+	var result=text.split(" ");
+	result=result.map(function(word){
+		var sentiment = new Sentimood();
+		var score = sentiment.analyze(word).score;
+		console.log("score is " + score);
+		if(score < 0){
+			//it is swear word
+			//console.log("replaced "+word);
+			return replacements[Math.floor(Math.random()*replacements.length)];		
+		}
+		return word;	
+	});
+	
+	return result.join(" ");
+}
+
 function makeNoHateSpeech(text){
-
+	//var sentiment = new Sentimood();
 	//console.log("inspect "+text);
-
+	//console.log(sentiment.analyze(text+""));
 	var result=text.split(" ");
 	//console.log(result);
 	
