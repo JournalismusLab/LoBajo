@@ -82,20 +82,11 @@ document.getElementById("sensitivity").addEventListener("change", function(e) {
 	browser.storage.local.set({
 		sensitivity: document.getElementById("sensitivity").value
 	});
-	
-	function onExecuted(result) {
-	  console.log(`We executed in all subframes`);
-	}
-
-	function onError(error) {
-	  console.log(`Error: ${error}`);
-	}
 
 	var executing = browser.tabs.executeScript({
-	  file: "/enable.js",
+	  file: "/reload.js",
 	  allFrames: true
 	});
-	executing.then(onExecuted, onError);
 });
 
 

@@ -12,20 +12,20 @@ var replacements=["🙋🏼‍♂️","🐶","🦜","🌚","🤦‍♀️","🎼
 
 //https://www.javascriptcookbook.com/article/traversing-dom-subtrees-with-a-recursive-walk-the-dom-function/
 
-function walkTheDOM(node, func) {
-    func(node);
+function walkTheDOM(node, func,sensitivity) {
+    func(node,sensitivity);
     node = node.firstChild;
     while (node) {
-        walkTheDOM(node, func);
+        walkTheDOM(node, func,sensitivity);
         node = node.nextSibling;
     }
 }
 
-function workOnEachNode(node){
+function workOnEachNode(node,sensitivity){
     if (node.nodeType === 3) { // Is it a Text node?
     	//console.log(node);
     	//node.data="*"+node.data+"*";
-    	workOnNode(node);
+    	workOnNode(node,sensitivity);
 
     	/*
 	var text = node.data.trim();
@@ -36,30 +36,33 @@ function workOnEachNode(node){
     }
 }
 
+function append_meta(){
+	var meta = document.createElement('meta');
+	//meta.charset = "UTF-8";
+	meta.setAttribute('charset', 'UTF-8');
+	document.getElementsByTagName('head')[0].appendChild(meta);
+}
+
 function main(sensitivity){
 	console.log('swearblock is running');
 	console.log("main");
 	console.log("sensitivity: "+sensitivity);
 	
-	var meta = document.createElement('meta');
-	//meta.charset = "UTF-8";
-	meta.setAttribute('charset', 'UTF-8');
-	document.getElementsByTagName('head')[0].appendChild(meta);
-
+	append_meta();
 	fill_swear_words();
 
 	// Example usage: Process all Text nodes on the page
-	walkTheDOM(document.body, workOnEachNode);
+	walkTheDOM(document.body, workOnEachNode,sensitivity);
 	
 }
 
 
-async function workOnNode(node){
+async function workOnNode(node,sensitivity){
 	if(node.data.trim().length>0){
-		node.data=makeNoHateSpeech(node.data);
+		//node.data=makeNoHateSpeech(node.data);
 		var sentiment = new Sentimood();
-		if(sentiment.analyze(node.data).score < -2){
-			node.data = sentimentReplace(node.data);
+		if(sentiment.analyze(node.data).score < sensitivity){
+			node.data = sentimentReplace(node.data,sensitivity);
 		}
 		console.log(sentiment.analyze("out").score);
 	}
@@ -93,17 +96,14 @@ function fill_swear_words(){
 
 }
 
-function makeNoHateSpeechWord(word){
-	
-}
 
-function sentimentReplace(text){
+function sentimentReplace(text,sensitivity){
 	var result=text.split(" ");
 	result=result.map(function(word){
 		var sentiment = new Sentimood();
 		var score = sentiment.analyze(word).score;
 		console.log("score is " + score);
-		if(score < 0){
+		if(score < (sensitivity)){
 			//it is swear word
 			//console.log("replaced "+word);
 			return replacements[Math.floor(Math.random()*replacements.length)];		
