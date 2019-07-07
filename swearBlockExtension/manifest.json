@@ -7,7 +7,7 @@
   "description": "Adds a red border to all webpages matching mozilla.org.",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/swearing.svg"
   },
 
   "content_scripts": [
@@ -24,7 +24,7 @@
   "permissions": ["tabs","webRequest"],
   
   "browser_action": {
-  "default_icon": "icons/border-48.png",
+  "default_icon": "icons/swearing.svg",
   "default_title": "SwearBlock",
   "default_popup": "popup/popup.html"
 }
