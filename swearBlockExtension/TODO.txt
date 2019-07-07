@@ -18,12 +18,15 @@
 
 [x] make the emojis appear colorful all the time
 
-[ ] make the design of the popup more beautiful (maybe use bootstrap here)
+[x] make the design of the popup more beautiful (maybe use bootstrap here)
 
 //we decided to implement the tool first only for english text
 [x] create a slider to adjust the sensitivity of the blocker according to the sentiment score
 
 [ ] figure out why i cannot interact with the popup after location reload or whatever.
     i can only click the button once
+    
+[ ] deploy the prototype and create an example page where 
+    you can see the effect of the addon for hate speech
 
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
