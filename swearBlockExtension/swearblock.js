@@ -36,9 +36,10 @@ function workOnEachNode(node){
     }
 }
 
-function main(){
+function main(sensitivity){
 	console.log('swearblock is running');
 	console.log("main");
+	console.log("sensitivity: "+sensitivity);
 	
 	var meta = document.createElement('meta');
 	//meta.charset = "UTF-8";
