@@ -42,7 +42,7 @@ document.getElementById("button_disable").addEventListener("click", function(e) 
 
   	function onExecuted(result) {
 	  console.log(`We executed in all subframes`);
-	  location.reload();
+	  window.close();
 	}
 
 	function onError(error) {
@@ -60,7 +60,7 @@ document.getElementById("button_enable").addEventListener("click", function(e) {
 
   	function onExecuted(result) {
 	  console.log(`We executed in all subframes`);
-  	  location.reload();
+  	  window.close();
 	}
 
 	function onError(error) {
@@ -79,14 +79,24 @@ document.getElementById("button_enable").addEventListener("click", function(e) {
 
 document.getElementById("sensitivity").addEventListener("change", function(e) {
 
+	function onExecuted(result) {
+	  console.log(`We executed in all subframes`);
+  	  window.close();
+	}
+
+	function onError(error) {
+	  console.log(`Error: ${error}`);
+	}
+
 	browser.storage.local.set({
 		sensitivity: document.getElementById("sensitivity").value
 	});
 
 	var executing = browser.tabs.executeScript({
-	  file: "/reload.js",
+	  file: "/enable.js",
 	  allFrames: true
 	});
+	executing.then(onExecuted, onError);
 });
 
 
