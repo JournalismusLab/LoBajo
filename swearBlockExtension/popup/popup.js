@@ -23,7 +23,7 @@ document.getElementById("button_disable").addEventListener("click", function(e) 
 
   	function onExecuted(result) {
 	  console.log(`We executed in all subframes`);
-	  //location.reload();
+	  location.reload();
 	}
 
 	function onError(error) {
@@ -41,7 +41,7 @@ document.getElementById("button_enable").addEventListener("click", function(e) {
 
   	function onExecuted(result) {
 	  console.log(`We executed in all subframes`);
-  	  //location.reload();
+  	  location.reload();
 	}
 
 	function onError(error) {
