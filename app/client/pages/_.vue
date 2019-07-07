@@ -1,46 +1,45 @@
 <template>
     <v-app>
-
-        <v-layout column pt-2>
-            <v-flex>
-                <v-layout>
-                    <v-flex>
+        <v-container>
+            <v-layout column>
+                <v-flex d-flex style="height: 100px" fluid>
+                    <v-flex style="height: 100px" fluid>
                         <v-text-field
                                 v-model="comment"
                                 label="Kommentar hier eingeben"
                         ></v-text-field>
                     </v-flex>
-                    <v-flex>
+                    <v-flex style="height: 100px">
                         <v-btn @click="send_text" :disabled="loading">
                             Kommentar senden
                         </v-btn>
                     </v-flex>
-                </v-layout>
+                </v-flex>
+                <v-flex>
+                    <v-layout py-2 v-for="(val, idx) in comments" :key="idx" column>
+                        <v-card>
 
-            </v-flex>
-            <v-flex>
-                <v-layout py-2 v-for="(val, idx) in comments" :key="idx" column>
-                    <v-card>
+                            <v-flex class="subheading">
+                                {{val.text}}
+                            </v-flex>
+                            <v-flex>
+                                <v-layou row>
+                                    <v-flex xs6 class="caption">
+                                        user: {{val.user}}
+                                    </v-flex>
+                                    <v-flex xs6 class="caption">
+                                        time: {{val.time}}
+                                    </v-flex>
+                                </v-layou>
+                            </v-flex>
+                        </v-card>
+                    </v-layout>
 
-                        <v-flex class="subheading">
-                            {{val.text}}
-                        </v-flex>
-                        <v-flex>
-                            <v-layou row >
-                                <v-flex xs6 class="caption">
-                                    user: {{val.user}}
-                                </v-flex>
-                                <v-flex xs6 class="caption">
-                                    time: {{val.time}}
-                                </v-flex>
-                            </v-layou>
-                        </v-flex>
-                    </v-card>
-                </v-layout>
+                </v-flex>
 
-            </v-flex>
+            </v-layout>
+        </v-container>
 
-        </v-layout>
 
     </v-app>
 </template>
@@ -64,7 +63,7 @@
 
       send_text: function () {
         axios
-            .post("http://localhost:4000/",
+            .post("http://18.185.163.135:4000/",
                 this.comment,
                 {
                   headers: {

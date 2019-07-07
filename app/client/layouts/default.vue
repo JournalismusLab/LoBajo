@@ -1,4 +1,4 @@
- <template>
+<template>
 
     <v-app
             id="inspire"
@@ -12,13 +12,12 @@
                         color="transparent"
                 >
                     <v-flex xs12 sm10 md7>
-                        
+
                         <v-layout align-center justify-space-between row fill-height>
-                            
 
 
-
-                            <v-btn :active="toggle_exclusive===2" @click="toggle_exclusive=2" flat color="red"
+                            <v-btn v-if="false" :active="toggle_exclusive===2" @click="toggle_exclusive=2" flat
+                                   color="red"
                                    to="/">
                                 <div :style="toggle_exclusive===2 ? 'text-decoration: underline' :''">
                                     Map
@@ -134,8 +133,8 @@
         min-width: 0px;
         width: 100%;
     }
-    
-    .navbtn{
-        color:red;
+
+    .navbtn {
+        color: red;
     }
 </style>
