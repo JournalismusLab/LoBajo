@@ -5,16 +5,35 @@
 //hide the button which is not needed based on the user settings
 
 var gettingItem = browser.storage.local.get("enabled");
-gettingItem.then(onGot, function(error){});
+gettingItem.then(onGot, function(error){
+	browser.storage.local.set({
+		enabled: false
+	});
+
+});
+
+var gettingItem2 = browser.storage.local.get("sensitivity");
+gettingItem2.then(onGot2, function(error){
+	browser.storage.local.set({
+		sensitivity: -2
+	});
+
+});
+
+function onGot2(item){
+	document.getElementById("sensitivity").value=item.sensitivity;	
+}
 
 function onGot(item) {
   
   if(item.enabled){
 	document.getElementById("button_disable").style.display="";
 	document.getElementById("button_enable").style.display="none";
+	document.getElementById("sensitivity_div").style.display="";
   }else{
 	document.getElementById("button_disable").style.display="none";
-	document.getElementById("button_enable").style.display="";  
+	document.getElementById("button_enable").style.display="";
+	document.getElementById("sensitivity_div").style.display="none";	
   }
 }
 
@@ -58,5 +77,12 @@ document.getElementById("button_enable").addEventListener("click", function(e) {
 });
 
 
+document.getElementById("sensitivity").addEventListener("change", function(e) {
 
-//console.log("popup");
+	browser.storage.local.set({
+		sensitivity: document.getElementById("sensitivity").value
+	});
+	
+});
+
+
