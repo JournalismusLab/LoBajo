@@ -4,18 +4,24 @@
 [x] find swear words in a list
    [x] find out how to load these words (David made a cpp tool for that)
    
-[ ] find an api and do sentiment analysis
+[x] find an api and do sentiment analysis (Alan found a javascript dependency which 
+    can analyze sentiment for english text)
 
 [x] find a site with hate speech on it to demonstrate the extension
    [
    "https://www.songtexte.com/songtext/curse/gangsta-rap-7bdb6244.html",
    "https://battle-station.com/viewtopic.php?t=40986"
    ]
+   [ ] find some english sites, to demonstrate the slider for adjusting the sensitivity
 
 [x] replace hate speech with random friendly emojis to make it more interesting
 
 [x] make the emojis appear colorful all the time
 
 [ ] make the design of the popup more beautiful (maybe use bootstrap here)
+
+//we decided to implement the tool first only for english text
+[ ] create a slider to adjust the sensitivity of the blocker according to the sentiment score
+
 
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
