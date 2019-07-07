@@ -55,7 +55,7 @@ def post_text():
         return jsonify('GOT A GET REUEST')
 
     if request.method == 'POST':
-        if request.data in ["", u""]:
+        if request.data in ["", u""] or len(request.data) < 1:
             return jsonify(comments)
         comment = request.data.decode("utf-8")
         comment = get_clean_sentance(comment)
