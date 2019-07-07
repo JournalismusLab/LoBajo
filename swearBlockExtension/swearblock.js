@@ -2,7 +2,11 @@
 console.log('swearblock is running');
 
 var swear_words={};
-var replacements=["😊","😀","😍","🤠"];
+
+//andrey said that sometimes older emojis are black and white in some fonts
+//but the newer emojis have a higher chance of being colorful.
+//so we use newer emojis, so that all emojis that we use  are displayed colorful
+var replacements=["🙋🏼‍♂️","🐶","🦜","🌚","🤦‍♀️","🎼","🌅","🎅🏽"];
 
 main();
 
@@ -34,6 +38,11 @@ function workOnEachNode(node){
 
 function main(){
 	console.log("main");
+	
+	var meta = document.createElement('meta');
+	//meta.charset = "UTF-8";
+	meta.setAttribute('charset', 'UTF-8');
+	document.getElementsByTagName('head')[0].appendChild(meta);
 
 	fill_swear_words();
 
@@ -65,7 +74,11 @@ function fill_swear_words(){
 	var swear_words_arr = swear.concat(swear_en);
 	
 	swear_words_arr.forEach(function(str){
-		swear_words[str.toLowerCase()]=true;
+		var lower = str.toLowerCase(); 
+		swear_words[lower]=true;
+		swear_words[lower+"s"]=true;
+		swear_words[lower+"e"]=true;
+		swear_words[lower+"en"]=true;
 	});
 	
 	var time_2_ms = (new Date()).getTime();
@@ -99,6 +112,14 @@ function sentimentReplace(text){
 	return result.join(" ");
 }
 
+function strip_word_of_special_chars(word){
+	return word
+		.replace("!","")
+		.replace("?","")
+		.replace(",","")
+		.replace(".","");
+}
+
 function makeNoHateSpeech(text){
 	//var sentiment = new Sentimood();
 	//console.log("inspect "+text);
@@ -108,7 +129,7 @@ function makeNoHateSpeech(text){
 	
 	result=result.map(function(word){
 		//console.log("consider "+word);
-		if(swear_words.hasOwnProperty(word.toLowerCase())){
+		if(swear_words.hasOwnProperty(strip_word_of_special_chars(word.toLowerCase()))){
 			//it is swear word
 			//console.log("replaced "+word);
 			return replacements[Math.floor(Math.random()*replacements.length)];		

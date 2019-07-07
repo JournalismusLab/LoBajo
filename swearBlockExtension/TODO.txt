@@ -7,5 +7,11 @@
 [ ] find an api and do sentiment analysis
 
 [ ] find a site with hate speech on it to demonstrate the extension
+   [
+   "https://www.songtexte.com/songtext/curse/gangsta-rap-7bdb6244.html",
+   "https://battle-station.com/viewtopic.php?t=40986"
+   ]
 
 [x] replace hate speech with random friendly emojis to make it more interesting
+
+[ ] make the emojis appear colorful all the time
