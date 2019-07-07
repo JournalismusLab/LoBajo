@@ -19,16 +19,16 @@
                     <v-layout my-2 v-for="(val, idx) in comments" :key="idx" column>
                         <v-card>
 
-                            <v-flex class="subheading">
+                            <v-flex class="title">
                                 {{val.text}}
                             </v-flex>
                             <v-flex>
                                 <v-layout row>
                                     <v-flex xs6 class="caption">
-                                        user: {{val.user}}
+                                        {{val.user}}
                                     </v-flex>
                                     <v-flex xs6 class="caption">
-                                        time: {{val.time}}
+                                        {{val.time}}
                                     </v-flex>
                                 </v-layout>
                             </v-flex>
