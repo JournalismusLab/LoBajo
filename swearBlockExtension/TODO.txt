@@ -6,7 +6,7 @@
    
 [ ] find an api and do sentiment analysis
 
-[ ] find a site with hate speech on it to demonstrate the extension
+[x] find a site with hate speech on it to demonstrate the extension
    [
    "https://www.songtexte.com/songtext/curse/gangsta-rap-7bdb6244.html",
    "https://battle-station.com/viewtopic.php?t=40986"
@@ -14,8 +14,8 @@
 
 [x] replace hate speech with random friendly emojis to make it more interesting
 
-[ ] make the emojis appear colorful all the time
+[x] make the emojis appear colorful all the time
 
-
+[ ] make the design of the popup more beautiful (maybe use bootstrap here)
 
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
