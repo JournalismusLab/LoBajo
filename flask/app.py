@@ -64,7 +64,7 @@ def post_text():
             "text": comment,
             "user": request.remote_addr
         }
-        comments.insert(0, comment_set)
+        comments.insert(0, comment_set )
         return jsonify(comments)
 
 
