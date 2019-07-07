@@ -57,7 +57,7 @@
     data: () => ({
       comments: [],
       loading: false,
-      comment: null
+      comment: ""
     }),
     methods: {
 
@@ -86,6 +86,9 @@
               // ...
             });
       }
+    },
+    mounted(){
+      this.send_text();
     }
   };
 </script>
