@@ -20,7 +20,10 @@
                         <v-card>
 
                             <v-flex class="title">
-                                {{val.text}}
+                                <p>
+                                    {{val.text}}
+
+                                </p>
                             </v-flex>
                             <v-flex>
                                 <v-layout row>
@@ -88,7 +91,7 @@
             });
       }
     },
-    mounted(){
+    mounted() {
       this.send_text();
     }
   };
