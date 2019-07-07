@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*","file:///*"],
-      "js": ["sentimood/sentimood.js", "swear.js","swear_en.js","hateWords.js","swearblock.js"]
+      "js": ["sentimood/sentimood.js", "swear.js","swear_en.js","hateWords.js","swearblock.js","takedefaultaction.js"]
     }
   ],
   
@@ -21,7 +21,7 @@
   	"swearWords/EnglishSwearWords.txt",
 	"swearWords/GermanSwearWords.txt"
   				],
-  "permissions": ["tabs","webRequest","activeTab"],
+  "permissions": ["tabs","webRequest","activeTab","storage"],
   
   "browser_action": {
   "default_icon": "icons/swearing.svg",
