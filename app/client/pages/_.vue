@@ -16,21 +16,21 @@
                     </v-flex>
                 </v-flex>
                 <v-flex>
-                    <v-layout py-2 v-for="(val, idx) in comments" :key="idx" column>
+                    <v-layout my-2 v-for="(val, idx) in comments" :key="idx" column>
                         <v-card>
 
                             <v-flex class="subheading">
                                 {{val.text}}
                             </v-flex>
                             <v-flex>
-                                <v-layou row>
+                                <v-layout row>
                                     <v-flex xs6 class="caption">
                                         user: {{val.user}}
                                     </v-flex>
                                     <v-flex xs6 class="caption">
                                         time: {{val.time}}
                                     </v-flex>
-                                </v-layou>
+                                </v-layout>
                             </v-flex>
                         </v-card>
                     </v-layout>
@@ -62,6 +62,7 @@
     methods: {
 
       send_text: function () {
+        this.loading = true;
         axios
             .post("http://18.185.163.135:4000/",
                 this.comment,
