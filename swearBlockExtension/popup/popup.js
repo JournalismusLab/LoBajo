@@ -1,8 +1,8 @@
-//console.log("popup");
+
 
 //localStorage.setItem("popup","true");
 
-document.addEventListener("click", function(e) {
+document.getElementById("button_reset").addEventListener("click", function(e) {
 
 
   var chosenPage = "https://www.google.com";;
@@ -11,3 +11,5 @@ document.addEventListener("click", function(e) {
   });
 
 });
+
+//console.log("popup");
