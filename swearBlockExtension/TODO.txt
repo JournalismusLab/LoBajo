@@ -10,7 +10,9 @@
 [x] find a site with hate speech on it to demonstrate the extension
    [
    "https://www.songtexte.com/songtext/curse/gangsta-rap-7bdb6244.html",
-   "https://battle-station.com/viewtopic.php?t=40986"
+   "https://battle-station.com/viewtopic.php?t=40986",
+   "https://voat.co/v/news/3319167",
+   "https://voat.co/v/news/3319006"
    ]
    [ ] find some english sites, to demonstrate the slider for adjusting the sensitivity
 
