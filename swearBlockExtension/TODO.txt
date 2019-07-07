@@ -22,6 +22,8 @@
 
 //we decided to implement the tool first only for english text
 [ ] create a slider to adjust the sensitivity of the blocker according to the sentiment score
+   [ ] we can store the value of the slide in a URL or cookie, since browser.storage.local is not so easy to use
+       and only available to extensions
 
 
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
