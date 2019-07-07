@@ -1,5 +1,5 @@
 //document.body.style.border = "5px solid red";
-console.log('swearblock is running');
+
 
 var swear_words={};
 
@@ -8,7 +8,7 @@ var swear_words={};
 //so we use newer emojis, so that all emojis that we use  are displayed colorful
 var replacements=["🙋🏼‍♂️","🐶","🦜","🌚","🤦‍♀️","🎼","🌅","🎅🏽"];
 
-main();
+
 
 //https://www.javascriptcookbook.com/article/traversing-dom-subtrees-with-a-recursive-walk-the-dom-function/
 
@@ -37,6 +37,7 @@ function workOnEachNode(node){
 }
 
 function main(){
+	console.log('swearblock is running');
 	console.log("main");
 	
 	var meta = document.createElement('meta');
