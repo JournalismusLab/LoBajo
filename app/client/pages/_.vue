@@ -20,9 +20,8 @@
                         <v-card>
 
                             <v-flex class="title">
-                                <p>
+                                <p ma-2>
                                     {{val.text}}
-
                                 </p>
                             </v-flex>
                             <v-flex>
